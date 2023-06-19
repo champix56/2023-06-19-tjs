@@ -1,0 +1,9 @@
+.MemeForm {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 5px;
+}
+.smallNumber{
+    width:60px;
+}
