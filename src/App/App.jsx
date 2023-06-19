@@ -5,7 +5,7 @@ import Button from "./components/ui/Button/Button";
 const App = (props) => {
   return (
     <div className="App">
-      <Button type='button' bgcolor="tomato" color="green">
+      <Button type='button' bgcolor="tomato" color="green" style={{width:'250px'}}>
         <div>coucou</div>
         <img src="https://cdn4.iconfinder.com/data/icons/evil-icons-user-interface/64/check-256.png" alt="ok" />
       </Button>

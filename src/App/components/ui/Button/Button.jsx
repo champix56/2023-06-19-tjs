@@ -4,7 +4,7 @@ const Button = (props) => {
   console.log(props);
   return (
     <button
-      style={{ backgroundColor: props.bgcolor, color: props.color }}
+      style={{ ...props.style, backgroundColor: props.bgcolor, color: props.color}}
       type={props.type}
       className={style.Button + " btn"}
     >
