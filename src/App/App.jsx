@@ -13,7 +13,7 @@ const App = (props) => {
       <Button >
         <div>rtyuio</div>
       </Button>
-      <Button text="fghjkl" />
+      <Button children="fghjkl" />
     </div>
   );
 };
