@@ -5,6 +5,13 @@
    background-color: skyblue;
    border:none;
    box-shadow: 25px 25px 25px grey; 
+   margin-left: 18px;
+   margin-bottom: 18px;
+}
+.Button:hover{
+    border:2px solid white;
+    box-shadow: 15px 15px 25px grey; 
+    
 }
 .Button img{
     height:38px;
