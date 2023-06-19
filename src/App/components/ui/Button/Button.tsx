@@ -3,12 +3,12 @@ import style from "./Button.module.css";
 import PropTypes from "prop-types";
 
 export interface IButtonProps {
-  onButtonClick?: Function,
-  children: string | React.ReactElement | Array<React.ReactElement | string>,
+  onButtonClick?: Function
+  children: string | React.ReactElement | Array<React.ReactElement | string>
   style?: object
-  bgcolor?: 'skyblue' | 'tomato' | 'lime',
-  color?: 'white' | 'black',
-  type?: 'button' | 'reset' | 'submit',
+  bgcolor?: 'skyblue' | 'tomato' | 'lime'
+  color?: 'white' | 'black'
+  type?: 'button' | 'reset' | 'submit'
 
 }
 const Button: React.FC<IButtonProps> = (props) => {
