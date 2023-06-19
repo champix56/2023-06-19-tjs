@@ -9,7 +9,7 @@ const App = (props) => {
         <div>coucou</div>
         <img src="https://cdn4.iconfinder.com/data/icons/evil-icons-user-interface/64/check-256.png" alt="ok" />
       </Button>
-      <Button >DEMAT BREIZH</Button>
+      <Button bgcolor="orange" >DEMAT BREIZH</Button>
       <Button >
         <div>rtyuio</div>
       </Button>
