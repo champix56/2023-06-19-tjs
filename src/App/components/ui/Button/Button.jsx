@@ -5,6 +5,9 @@ const Button = (props) => {
   console.log(props);
   return (
     <button
+      onClick={(evt) => {
+        props.onButtonClick('au cas ou j\'ai ete cliqué')
+      }}
       style={{
         ...props.style,
         backgroundColor: props.bgcolor,
@@ -23,8 +26,9 @@ Button.propTypes = {
   color: PropTypes.oneOf(["white", "black"]),
   children: PropTypes.any.isRequired,
   style: PropTypes.shape({
-    width:PropTypes.string,
-    height:PropTypes.string
-  })
+    width: PropTypes.string,
+    height: PropTypes.string,
+  }),
+  onButtonClick: PropTypes.func,
 };
 export default Button;
