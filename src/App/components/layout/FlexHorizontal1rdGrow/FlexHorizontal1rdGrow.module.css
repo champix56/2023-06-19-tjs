@@ -1,0 +1,10 @@
+.FlexHorizontal1RdGrow {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+
+.FlexHorizontal1RdGrow>*:nth-child(1) {
+    flex-grow: 1;
+}
