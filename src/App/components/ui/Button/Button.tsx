@@ -12,7 +12,7 @@ export interface IButtonProps {
 
 }
 const Button: React.FC<IButtonProps> = (props) => {
-  console.log(props);
+  // console.log(props);
   return (
     <button
       onClick={(evt) => {
