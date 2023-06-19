@@ -4,10 +4,10 @@ import Button from "./components/ui/Button/Button";
 
 const App = (props) => {
   return <div className="App">
-    <Button text="ertyui" coucou="fghjkl"/>
-    <Button text="dfghjkl"/>
+    <Button text={'srtyu'} coucou="fghjkl"/>
+    <Button text={["dfghjkl",'ertyu']}/>
+    <Button text={"fghjkl".substring(2)}/>
     <Button text="fghjkl"/>
-    <Button toto="fghjkl"/>
 
   </div>;
 };
