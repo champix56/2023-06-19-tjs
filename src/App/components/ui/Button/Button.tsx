@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 export interface IButtonProps {
   onButtonClick?: Function,
   children: string | React.ReactElement | Array<React.ReactElement | string>,
-  style?: { width: string, height: string },
+  style?: object
   bgcolor?: 'skyblue' | 'tomato' | 'lime',
   color?: 'white' | 'black',
   type?: 'button' | 'reset' | 'submit',
