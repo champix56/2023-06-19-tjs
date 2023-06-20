@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./MemeForm.module.css";
 import Button from "../ui/Button/Button";
-import { useState } from "react";
+//import { useState } from "react";
 const MemeForm = (props) => {
   //const [props.meme, props.onMemeChange] = useState(props.meme);
   return (
@@ -58,7 +58,7 @@ const MemeForm = (props) => {
           value={props.meme.x}
           onChange={(evt) => {
             console.log(evt.target);
-            props.onMemeChange({ ...props.meme, x: evt.target.value });
+            props.onMemeChange({ ...props.meme, x: Number(evt.target.value) });
           }}
         />
         <label htmlFor="y">
@@ -72,7 +72,7 @@ const MemeForm = (props) => {
           value={props.meme.y}
           onChange={(evt) => {
             console.log(evt.target);
-            props.onMemeChange({ ...props.meme, y: evt.target.value });
+            props.onMemeChange({ ...props.meme, y:Number( evt.target.value )});
           }}
         />
         <hr />
@@ -104,7 +104,7 @@ const MemeForm = (props) => {
           value={props.meme.fontSize}
           onChange={(evt) => {
             console.log(evt.target);
-            props.onMemeChange({ ...props.meme, fontSize: evt.target.value });
+            props.onMemeChange({ ...props.meme, fontSize:Number( evt.target.value) });
           }}
         />
         <br />
