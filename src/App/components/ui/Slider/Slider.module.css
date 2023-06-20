@@ -1,0 +1,36 @@
+.Slider>input{
+    font-size: 30pt;
+    appearance: none;
+    border-radius: 40px;
+    -moz-appearance: none;
+    -webkit-appearance:none ;
+    width: 3.5em;
+    height: 1.5em;
+    background-color: tomato;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    transition: all.2s ease-in-out;
+    -webkit-transition: all.2s ease-in-out;
+}
+.Slider>input:checked{
+    background-color: skyblue;
+}
+.Slider>input:after{
+    position: absolute;
+    content: "";
+    width: 1.5em;
+    height: 1.5em;
+    border-radius:50%;
+    background: white;
+    -webkit-box-shadow:0 0 .25em rgba(0,0,0,0.3) ;
+    box-shadow:0 0 .25em rgba(0,0,0,0.3) ;
+    transform: scale(0.7);
+    -webkit-transform: scale(0.7);
+    left: 0;
+    transition: all .2 ease-in-out;
+    -webkit-transition: all .2 ease-in-out;
+}
+.Slider>input:checked::after{
+    left: calc(100% - 1.5em);
+}
