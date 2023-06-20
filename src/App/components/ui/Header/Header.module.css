@@ -1,1 +1,15 @@
-.Header {}
+.Header {
+    color: skyblue;
+    font-weight: 900;
+    font-size: 36pt;
+    text-decoration: underline grey;
+}
+
+.dot {
+    color: grey;
+}
+
+.react {
+    color: tomato;
+    font-style: italic;
+}

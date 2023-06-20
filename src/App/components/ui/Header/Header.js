@@ -1,21 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styles from "./Header.module.css";
-/**
- * composant Header
- * @param {{}} props props du composant Header
- * @returns {React.ReactNode} rendu du composant Template
- */
-const Header = (props) => {
-  return (
-    <div className={styles.Header} data-testid="Header">
-      Header Component
-    </div>
-  );
-};
 
-Header.propTypes = {};
-
-Header.defaultProps = {};
-
+const Header = () => (
+  <div className={styles.Header} data-testid="Header">
+    Meme<span className={styles.dot}>.</span>
+    <span className={styles.react}>react</span>
+  </div>
+);
 export default Header;
