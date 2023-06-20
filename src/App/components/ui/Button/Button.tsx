@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./Button.module.css";
 import PropTypes from "prop-types";
 
@@ -11,15 +11,29 @@ export interface IButtonProps {
   type?: 'button' | 'reset' | 'submit'
 
 }
+let timeoutDescripteur:NodeJS.Timeout|undefined = undefined
 const Button: React.FC<IButtonProps> = (props) => {
   // console.log(props);
   const [state, setstate] = useState({ isClicked: false, uneValeur: 'lambda' })
-
+  useEffect(() => {
+    if (state.isClicked) {
+      timeoutDescripteur = setTimeout(() => {
+        setstate({ ...state, isClicked: false });
+      }, 350)
+    }
+    return ()=>{
+      clearTimeout(timeoutDescripteur);
+    }
+  }, [state])
+  useEffect(() => {
+   //componentDidMount equiv
+   //avec aucune valeur observer
+  }, [])
   return (
     <button
       onClick={(evt) => {
-        setstate({...state, isClicked: true })
-        
+        setstate({ ...state, isClicked: true })
+
         if (props.onButtonClick && typeof props.onButtonClick === 'function') {
           props.onButtonClick('au cas ou j\'ai ete cliqué')
         }
