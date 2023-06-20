@@ -10,11 +10,13 @@ const App = () => {
   const [current, setCurrent] = useState(emptyMeme);
   const [ressources, setressources] = useState({images:[],memes:[]})
   useEffect(() => {
-    const pri=fetch('http://localhost:5679/images').then(response=>response.json())
-    const prm=fetch('http://localhost:5679/memes').then(response=>response.json())
-    Promise.all([pri,prm]).then(ressourcesArray=>{
-      setressources({images:ressourcesArray[0],memes:ressourcesArray[1]})
-    })
+    const intervalDescripteur=setInterval(()=>{
+      const pri=fetch('http://localhost:5679/images').then(response=>response.json())
+      const prm=fetch('http://localhost:5679/memes').then(response=>response.json())
+      Promise.all([pri,prm]).then(ressourcesArray=>{
+        setressources({images:ressourcesArray[0],memes:ressourcesArray[1]})
+      })},5000)
+      return()=>{clearInterval(intervalDescripteur)}
   }, [])
   return (
     <div className="App">
