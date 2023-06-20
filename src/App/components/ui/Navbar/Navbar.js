@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./Navbar.module.css";
 import {Navbar as NavBar, Container, Nav} from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import {LinkContainer} from 'react-router-bootstrap'
 import '../../../../../node_modules/bootstrap/dist/css/bootstrap.css'
 import '../../../../../node_modules/jquery/dist/jquery.js'
 import '../../../../../node_modules/bootstrap/dist/js/bootstrap.js'
@@ -16,11 +18,10 @@ const Navbar = (props) => {
     <div className={styles.Navbar} data-testid="Navbar">
        <NavBar bg="primary" data-bs-theme="dark">
         <Container>
-          <NavBar.Brand href="#home">Navbar</NavBar.Brand>
+        <LinkContainer to="/"><NavBar.Brand href="#home">Home</NavBar.Brand></LinkContainer>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+          <LinkContainer to="/thumbnail"><Nav.Link href="#">Thumbnail</Nav.Link></LinkContainer>
+          <LinkContainer to="/editor"><Nav.Link href="#">Editor</Nav.Link></LinkContainer>
           </Nav>
         </Container>
       </NavBar>
