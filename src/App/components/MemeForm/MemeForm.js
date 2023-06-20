@@ -17,7 +17,7 @@ const MemeForm = (props) => {
           value={formValues.titre}
           onChange={(evt) => {
             console.log(evt.target);
-            setformValues({...formValues,titre:evt.target.value})
+            setformValues({ ...formValues, titre: evt.target.value });
           }}
         />
         <hr />
@@ -33,39 +33,61 @@ const MemeForm = (props) => {
           <h2>texte</h2>
         </label>
         <br />
-        <input name="text" id="text" type="text"  value={formValues.text}
+        <input
+          name="text"
+          id="text"
+          type="text"
+          value={formValues.text}
           onChange={(evt) => {
             console.log(evt.target);
-            setformValues({...formValues,text:evt.target.value})
-          }} />
+            setformValues({ ...formValues, text: evt.target.value });
+          }}
+        />
         <br />
         <label htmlFor="x">
           <h2>x :</h2>
         </label>
-        <input className={style.smallNumber} name="x" id="x" type="number"  value={formValues.x}
+        <input
+          className={style.smallNumber}
+          name="x"
+          id="x"
+          type="number"
+          value={formValues.x}
           onChange={(evt) => {
             console.log(evt.target);
-            setformValues({...formValues,x:evt.target.value})
-          }} />
+            setformValues({ ...formValues, x: evt.target.value });
+          }}
+        />
         <label htmlFor="y">
           <h2>y :</h2>
         </label>
-        <input className={style.smallNumber} name="y" id="y" type="number"  value={formValues.y}
+        <input
+          className={style.smallNumber}
+          name="y"
+          id="y"
+          type="number"
+          value={formValues.y}
           onChange={(evt) => {
             console.log(evt.target);
-            setformValues({...formValues,y:evt.target.value})
-          }} />
+            setformValues({ ...formValues, y: evt.target.value });
+          }}
+        />
         <hr />
         <br />
         <h3>Decorations</h3>
         <label htmlFor="color">
           <h2>color :</h2>
         </label>
-        <input name="color" id="color" type="color"  value={formValues.color}
+        <input
+          name="color"
+          id="color"
+          type="color"
+          value={formValues.color}
           onChange={(evt) => {
             console.log(evt.target);
-            setformValues({...formValues,color:evt.target.value})
-          }} />
+            setformValues({ ...formValues, color: evt.target.value });
+          }}
+        />
         <br />
         <label htmlFor="fontSize">
           <h2>font-size :</h2>
@@ -79,7 +101,7 @@ const MemeForm = (props) => {
           value={formValues.fontSize}
           onChange={(evt) => {
             console.log(evt.target);
-            setformValues({...formValues,fontSize:evt.target.value})
+            setformValues({ ...formValues, fontSize: evt.target.value });
           }}
         />
         <br />
@@ -97,17 +119,35 @@ const MemeForm = (props) => {
           value={formValues.fontWeight}
           onChange={(evt) => {
             console.log(evt.target);
-            setformValues({...formValues,fontWeight:evt.target.value})
+            setformValues({ ...formValues, fontWeight: evt.target.value });
           }}
         />
         <br />
-        <input name="underline" id="underline" type="checkbox" />
+        <input
+          name="underline"
+          id="underline"
+          type="checkbox"
+          checked={formValues.underline}
+          onChange={(evt) => {
+            console.log(evt.target);
+            setformValues({ ...formValues, underline: evt.target.checked });
+          }}
+        />
         &nbsp;
         <label htmlFor="underline">
           <h2>underline</h2>
         </label>
         <br />
-        <input name="italic" id="italic" type="checkbox" />
+        <input
+          name="italic"
+          id="italic"
+          type="checkbox"
+          checked={formValues.italic}
+          onChange={(evt) => {
+            console.log(evt.target);
+            setformValues({ ...formValues, italic: evt.target.checked });
+          }}
+        />
         &nbsp;
         <label htmlFor="italic">
           <h2>italic</h2>
