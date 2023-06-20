@@ -15,7 +15,12 @@ const App = () => {
         <Navbar />
         <FlexH1Grow>
           <MemeSVGViewer meme={current} image={undefined} basePath="" />
-          <MemeForm />
+          <MemeForm
+            meme={current}
+            onMemeChange={(meme) => {
+              setCurrent(meme);
+            }}
+          />
         </FlexH1Grow>
         <Footer />
       </FlexV3Grow>
