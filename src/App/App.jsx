@@ -1,44 +1,25 @@
-import React from "react";
-import style from "./App.module.css";
-import Button from "./components/ui/Button/Button";
-import TemplateName from "./components/TemplateName/TemplateName";
-class App extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state={counter:0, text:'dfghjkl',check:false}
-  }
-  componentDidUpdate(oldProps,oldState){
-    console.log(this.state.counter)
-  }
-  render() {
-    return (
-      <div className={style.App}>
-        valeur de counter :{" "}
-        <span style={{ fontWeight: "900", fontSize: "42pt" }}>
-          {this.state.counter}
-        </span>
-        <hr />
-        <Button
-          bgcolor="tomato"
-          onButtonClick={() => {
-            this.setState({counter:this.state.counter-1})
-            console.log(this.state);
-          }}
-        >
-          -1
-        </Button>
-        <Button
-          bgcolor="skyblue"
-          onButtonClick={() => {
-            this.setState({counter:this.state.counter+1})
-            console.log(this.state);
-          }}
-        >
-          +1
-        </Button>
-        <TemplateName  />
-      </div>
-    );
-  }
+import React from 'react'
+import FlexV3Grow from './components/layout/FlexV3Grow/FlexV3Grow'
+import Navbar from './components/ui/Navbar/Navbar'
+import FlexH1Grow from './components/layout/FlexH1Grow/FlexH1Grow'
+import MemeForm from './components/MemeForm/MemeForm'
+import Footer from './components/ui/Footer/Footer'
+import Header from './components/ui/Header/Header'
+import { MemeSVGViewer, emptyMeme,  } from 'orsys-tjs-meme'
+const App = () => {
+  return (
+    <div className='App'>
+        <FlexV3Grow>
+          <Header/>
+          <Navbar/>
+          <FlexH1Grow>
+            <MemeSVGViewer meme={emptyMeme} image={undefined} basePath=''/>
+            <MemeForm/>
+          </FlexH1Grow>
+          <Footer/>
+        </FlexV3Grow>
+    </div>
+  )
 }
-export default App;
+
+export default App
