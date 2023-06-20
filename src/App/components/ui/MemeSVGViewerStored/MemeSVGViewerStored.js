@@ -3,7 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 const MemeSVGViewerStored = (props) => {
-  const meme = useSelector((storeState) => storeState.meme);
+  const meme = useSelector((storeState) => storeState.current.meme);
   return (
     <MemeSVGViewer
       meme={meme}

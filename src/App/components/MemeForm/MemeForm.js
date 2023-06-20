@@ -167,7 +167,7 @@ const MemeForm = (props) => {
 };
 export const MemeFormStored=(props)=>{
   const dispatch=useDispatch()
-  const currentMeme=useSelector(storeState=>storeState.meme)
+  const currentMeme=useSelector(storeState=>storeState.current.meme)
  return <MemeForm {...props} meme={currentMeme} onMemeChange={(meme)=>dispatch(update(meme))}/>
 }
 export default MemeForm;
