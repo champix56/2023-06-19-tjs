@@ -13,13 +13,15 @@ export interface IButtonProps {
 }
 const Button: React.FC<IButtonProps> = (props) => {
   // console.log(props);
-  const [state, setstate] = useState({isClicked:false,uneValeur:'lambda'})
+  const [state, setstate] = useState({ isClicked: false, uneValeur: 'lambda' })
 
   return (
     <button
       onClick={(evt) => {
-        if(props.onButtonClick && typeof  props.onButtonClick==='function') { 
-          props.onButtonClick('au cas ou j\'ai ete cliqué') 
+        setstate({...state, isClicked: true })
+        
+        if (props.onButtonClick && typeof props.onButtonClick === 'function') {
+          props.onButtonClick('au cas ou j\'ai ete cliqué')
         }
       }}
       style={{
@@ -28,7 +30,7 @@ const Button: React.FC<IButtonProps> = (props) => {
         color: props.color,
       }}
       type={props.type}
-      className={`${style.Button} btn${state.isClicked?' '+style.isClicked:''}`}
+      className={`${style.Button} btn${state.isClicked ? ' ' + style.isClicked : ''}`}
     >
       {props.children}
     </button>
