@@ -30,8 +30,12 @@ const MemeForm = (props) => {
           <h2>Image</h2>
         </label>
         <br />
-        <select name="image" id="image">
+        <select name="image" id="image"
+          value={props.meme.imageId}
+          onChange={evt=>{props.onMemeChange({...props.meme,imageId:Number(evt.target.value)})}}
+        >
           <option value="-1">No image</option>
+          {props.images.map((img,i)=><option key={'option-'+i} value={img.id}>{img.titre}</option>)}
         </select>
         <hr />
         <label htmlFor="text">
@@ -168,6 +172,7 @@ const MemeForm = (props) => {
 export const MemeFormStored=(props)=>{
   const dispatch=useDispatch()
   const currentMeme=useSelector(storeState=>storeState.current.meme)
- return <MemeForm {...props} meme={currentMeme} onMemeChange={(meme)=>dispatch(update(meme))}/>
+  const images=useSelector(storeState=>storeState.ressources.images)
+ return <MemeForm {...props} images={images} meme={currentMeme} onMemeChange={(meme)=>dispatch(update(meme))}/>
 }
 export default MemeForm;

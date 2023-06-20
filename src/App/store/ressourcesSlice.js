@@ -1,18 +1,32 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
-    images:[],
-    memes:[]
-}
+  images: [],
+  memes: [],
+};
 
 const ressourcesSlice = createSlice({
-  name: 'ressources',
+  name: "ressources",
   initialState,
-  reducers: {
-    
+  reducers: {},
+  extraReducers:(builder)=>{
+    builder.addCase('ressources/initialFetch/fulfilled',(state,action)=>{
+        console.log(state,action)
+        state.images=action.payload.images;
+        state.memes=action.payload.memes;
+    })
   }
 });
 
-export const {} = ressourcesSlice.actions
+// export const {} = ressourcesSlice.actions;
 
-export default ressourcesSlice.reducer
+export const initialRessourcesFetch=createAsyncThunk('ressources/initialFetch',async()=>{
+   const pri =await fetch('http://localhost:5679/images')
+   const prm =await fetch('http://localhost:5679/memes')
+   const imgs=await pri.json()
+   const memes=await prm.json()
+   return {memes:memes,images:imgs}
+
+})
+
+export default ressourcesSlice.reducer;
