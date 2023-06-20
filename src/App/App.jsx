@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./App.module.css";
 import Button from "./components/ui/Button/Button";
+import TemplateName from "./components/TemplateName/TemplateName";
 class App extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -35,6 +36,7 @@ class App extends React.PureComponent {
         >
           +1
         </Button>
+        <TemplateName  />
       </div>
     );
   }
