@@ -1,18 +1,24 @@
 import React from "react";
 import style from "./MemeForm.module.css";
 import Button from "../ui/Button/Button";
-import { CurrentMemeContext } from "../../App";
+import { CurrentMemeContext, RessourcesContext } from "../../App";
+import { emptyMeme } from "orsys-tjs-meme";
 //import { useState } from "react";
 const MemeForm = (props) => {
   //const [meme, meme.set] = useState(meme);
   return (
     <CurrentMemeContext.Consumer>
-    {(meme)=>(
+  
+    {(meme)=>(  <RessourcesContext.Consumer>
+    {(ressources)=>{
+      return (
     <div className={style.MemeForm} data-testid="MemeForm">
       <form onSubmit={evt=>{
         evt.preventDefault();
         // meme.set(meme)
-      }}>
+      }}
+      onReset={evt=>{meme.set(emptyMeme)}}
+      >
         <label htmlFor="titre">
           <h1>Titre</h1>
         </label>
@@ -31,8 +37,15 @@ const MemeForm = (props) => {
           <h2>Image</h2>
         </label>
         <br />
-        <select name="image" id="image">
+        <select name="image" id="image"
+          value={meme.imageId}
+          onChange={evt=>{meme.set({...meme,imageId:Number(evt.target.value)})}}
+        >
           <option value="-1">No image</option>
+          {
+            ressources.images.map((img,position)=><option key={'option-'+position} value={img.id}>{img.titre}</option>
+            )
+          }
         </select>
         <hr />
         <label htmlFor="text">
@@ -163,7 +176,8 @@ const MemeForm = (props) => {
         <Button type="submit">ok</Button>
         <br />
       </form>
-    </div>
+    </div>)}}
+    </RessourcesContext.Consumer>
     )}
     </CurrentMemeContext.Consumer>
   );
