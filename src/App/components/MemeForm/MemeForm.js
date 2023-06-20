@@ -1,6 +1,8 @@
 import React from "react";
 import style from "./MemeForm.module.css";
 import Button from "../ui/Button/Button";
+import { useDispatch, useSelector } from "react-redux";
+import { update } from "../../store/currentSlice";
 //import { useState } from "react";
 const MemeForm = (props) => {
   //const [props.meme, props.onMemeChange] = useState(props.meme);
@@ -163,5 +165,9 @@ const MemeForm = (props) => {
     </div>
   );
 };
-
+export const MemeFormStored=(props)=>{
+  const dispatch=useDispatch()
+  const currentMeme=useSelector(storeState=>storeState.meme)
+ return <MemeForm {...props} meme={currentMeme} onMemeChange={(meme)=>dispatch(update(meme))}/>
+}
 export default MemeForm;
