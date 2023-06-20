@@ -1,1 +1,8 @@
-.FlexV3Grow {}
+.FlexV3Grow {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.FlexV3Grow>*:nth-child(3){
+    flex-grow: 1;
+}

@@ -1,1 +1,8 @@
-.FlexH1Grow {}
+.FlexH1Grow  {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.FlexH1Grow>*:nth-child(1){
+    flex-grow: 1;
+}
