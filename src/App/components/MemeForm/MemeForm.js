@@ -2,7 +2,7 @@ import React from "react";
 import style from "./MemeForm.module.css";
 import Button from "../ui/Button/Button";
 import { useDispatch, useSelector } from "react-redux";
-import { update } from "../../store/currentSlice";
+import { saveMeme, update } from "../../store/currentSlice";
 //import { useState } from "react";
 const MemeForm = (props) => {
   //const [props.meme, props.onMemeChange] = useState(props.meme);
@@ -10,7 +10,7 @@ const MemeForm = (props) => {
     <div className={style.MemeForm} data-testid="MemeForm">
       <form onSubmit={evt=>{
         evt.preventDefault();
-        // props.onMemeChange(props.meme)
+        props.onMemeSubmit(props.meme)
       }}>
         <label htmlFor="titre">
           <h1>Titre</h1>
@@ -173,6 +173,6 @@ export const MemeFormStored=(props)=>{
   const dispatch=useDispatch()
   const currentMeme=useSelector(storeState=>storeState.current.meme)
   const images=useSelector(storeState=>storeState.ressources.images)
- return <MemeForm {...props} images={images} meme={currentMeme} onMemeChange={(meme)=>dispatch(update(meme))}/>
+ return <MemeForm {...props} images={images} meme={currentMeme} onMemeChange={(meme)=>dispatch(update(meme))} onMemeSubmit={meme=>dispatch(saveMeme(meme))}/>
 }
 export default MemeForm;

@@ -22,7 +22,7 @@ const ressourcesSlice = createSlice({
             state.memes.push(action.payload)
         }
         else {
-            state.meme[position]=action.payload
+            state.memes[position]=action.payload
         }
     })
   }
