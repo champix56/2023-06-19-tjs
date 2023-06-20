@@ -28,8 +28,12 @@ const MemeForm = (props) => {
           <h2>Image</h2>
         </label>
         <br />
-        <select name="image" id="image">
+        <select name="image" id="image"
+          value={props.meme.imageId}
+          onChange={evt=>props.onMemeChange({...props.meme,imageId:Number(evt.target.value)})}
+        >
           <option value="-1">No image</option>
+          {props.images.map((img,i)=><option value={img.id}>{img.titre}</option>)}
         </select>
         <hr />
         <label htmlFor="text">
