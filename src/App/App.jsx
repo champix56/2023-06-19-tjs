@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import FlexV3Grow from "./components/layout/FlexV3Grow/FlexV3Grow";
 import Navbar from "./components/ui/Navbar/Navbar";
-import FlexH1Grow from "./components/layout/FlexH1Grow/FlexH1Grow";
-import MemeForm, { MemeFormStored } from "./components/MemeForm/MemeForm";
 import Footer from "./components/ui/Footer/Footer";
 import Header from "./components/ui/Header/Header";
-import { MemeSVGViewer, emptyMeme } from "orsys-tjs-meme";
+import { emptyMeme } from "orsys-tjs-meme";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import MemeThumbnail from "./pages/MemeThumbnail/MemeThumbnail";
+import MemeEditor from "./pages/MemeEditor/MemeEditor";
+import FlexH1Grow from "./components/layout/FlexH1Grow/FlexH1Grow";
 import MemeSVGViewerStored from "./components/ui/MemeSVGViewerStored/MemeSVGViewerStored";
+import { MemeFormStored } from "./components/MemeForm/MemeForm";
+
 const App = () => {
   const [current, setCurrent] = useState(emptyMeme);
   return (
@@ -14,10 +19,19 @@ const App = () => {
       <FlexV3Grow>
         <Header />
         <Navbar />
-        <FlexH1Grow>
-          <MemeSVGViewerStored images={[]} />
-          <MemeFormStored/>
-        </FlexH1Grow>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/thumbnail" element={<MemeThumbnail />} />
+          <Route
+            path="/editor"
+            element={
+              <FlexH1Grow>
+                <MemeSVGViewerStored />
+                <MemeFormStored />
+              </FlexH1Grow>
+            }
+          />
+        </Routes>
         <Footer />
       </FlexV3Grow>
     </div>
