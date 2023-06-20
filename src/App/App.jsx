@@ -1,8 +1,6 @@
 import React from "react";
 import style from "./App.module.css";
 import Button from "./components/ui/Button/Button";
-import Slider from "./components/ui/Slider/Slider";
-import Checkbox from "./components/ui/Checkbox/Checkbox";
 class App extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -37,8 +35,6 @@ class App extends React.PureComponent {
         >
           +1
         </Button>
-        <Slider onChange={(v)=>this.setState({check:v})} value={this.state.check} />
-        <Checkbox onChange={(v)=>this.setState({check:v})} value={this.state.check} />
       </div>
     );
   }

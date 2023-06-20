@@ -17,3 +17,7 @@
     height:38px;
     display: inline;
 }
+.isClicked{
+    border:2px solid grey;
+    box-shadow: 5px 5px 25px grey; 
+}

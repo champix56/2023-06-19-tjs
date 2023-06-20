@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./Button.module.css";
 import PropTypes from "prop-types";
 
@@ -13,6 +13,8 @@ export interface IButtonProps {
 }
 const Button: React.FC<IButtonProps> = (props) => {
   // console.log(props);
+  const [state, setstate] = useState({isClicked:false,uneValeur:'lambda'})
+
   return (
     <button
       onClick={(evt) => {
@@ -26,7 +28,7 @@ const Button: React.FC<IButtonProps> = (props) => {
         color: props.color,
       }}
       type={props.type}
-      className={style.Button + " btn"}
+      className={`${style.Button} btn${state.isClicked?' '+style.isClicked:''}`}
     >
       {props.children}
     </button>
