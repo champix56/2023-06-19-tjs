@@ -11,6 +11,26 @@
       "withTest": true,
       "withStory": true,
       "withLazy": true
+    },
+    "layout": {
+      "path": "src/App/components/layout",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": true,
+      "withLazy": true,
+      "customTemplates":{
+        "component":"grc/genericLayoutFunction/TemplateName.js"
+      }
+    },
+    "generic": {
+      "path": "src/App/components",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": true,
+      "withLazy": true,
+      "customTemplates":{
+        "component":"grc/genericFunction/TemplateName.js"
+      }
     }
   }
 }
