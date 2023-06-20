@@ -1,17 +1,14 @@
 import React from "react";
 import style from "./MemeForm.module.css";
 import Button from "../ui/Button/Button";
-import { CurrentMemeContext } from "../../App";
 //import { useState } from "react";
 const MemeForm = (props) => {
-  //const [meme, meme.set] = useState(meme);
+  //const [props.meme, props.onMemeChange] = useState(props.meme);
   return (
-    <CurrentMemeContext.Consumer>
-    {(meme)=>(
     <div className={style.MemeForm} data-testid="MemeForm">
       <form onSubmit={evt=>{
         evt.preventDefault();
-        // meme.set(meme)
+        // props.onMemeChange(props.meme)
       }}>
         <label htmlFor="titre">
           <h1>Titre</h1>
@@ -20,10 +17,10 @@ const MemeForm = (props) => {
         <input
           name="titre"
           id="titre"
-          value={meme.titre}
+          value={props.meme.titre}
           onChange={(evt) => {
             console.log(evt.target);
-            meme.set({ ...meme, titre: evt.target.value });
+            props.onMemeChange({ ...props.meme, titre: evt.target.value });
           }}
         />
         <hr />
@@ -43,10 +40,10 @@ const MemeForm = (props) => {
           name="text"
           id="text"
           type="text"
-          value={meme.text}
+          value={props.meme.text}
           onChange={(evt) => {
             console.log(evt.target);
-            meme.set({ ...meme, text: evt.target.value });
+            props.onMemeChange({ ...props.meme, text: evt.target.value });
           }}
         />
         <br />
@@ -58,10 +55,10 @@ const MemeForm = (props) => {
           name="x"
           id="x"
           type="number"
-          value={meme.x}
+          value={props.meme.x}
           onChange={(evt) => {
             console.log(evt.target);
-            meme.set({ ...meme, x: Number(evt.target.value) });
+            props.onMemeChange({ ...props.meme, x: Number(evt.target.value) });
           }}
         />
         <label htmlFor="y">
@@ -72,10 +69,10 @@ const MemeForm = (props) => {
           name="y"
           id="y"
           type="number"
-          value={meme.y}
+          value={props.meme.y}
           onChange={(evt) => {
             console.log(evt.target);
-            meme.set({ ...meme, y:Number( evt.target.value )});
+            props.onMemeChange({ ...props.meme, y:Number( evt.target.value )});
           }}
         />
         <hr />
@@ -88,10 +85,10 @@ const MemeForm = (props) => {
           name="color"
           id="color"
           type="color"
-          value={meme.color}
+          value={props.meme.color}
           onChange={(evt) => {
             console.log(evt.target);
-            meme.set({ ...meme, color: evt.target.value });
+            props.onMemeChange({ ...props.meme, color: evt.target.value });
           }}
         />
         <br />
@@ -104,10 +101,10 @@ const MemeForm = (props) => {
           id="fontSize"
           type="number"
           min="0"
-          value={meme.fontSize}
+          value={props.meme.fontSize}
           onChange={(evt) => {
             console.log(evt.target);
-            meme.set({ ...meme, fontSize:Number( evt.target.value) });
+            props.onMemeChange({ ...props.meme, fontSize:Number( evt.target.value) });
           }}
         />
         <br />
@@ -122,10 +119,10 @@ const MemeForm = (props) => {
           min="100"
           step="100"
           max="900"
-          value={meme.fontWeight}
+          value={props.meme.fontWeight}
           onChange={(evt) => {
             console.log(evt.target);
-            meme.set({ ...meme, fontWeight: evt.target.value });
+            props.onMemeChange({ ...props.meme, fontWeight: evt.target.value });
           }}
         />
         <br />
@@ -133,10 +130,10 @@ const MemeForm = (props) => {
           name="underline"
           id="underline"
           type="checkbox"
-          checked={meme.underline}
+          checked={props.meme.underline}
           onChange={(evt) => {
             console.log(evt.target);
-            meme.set({ ...meme, underline: evt.target.checked });
+            props.onMemeChange({ ...props.meme, underline: evt.target.checked });
           }}
         />
         &nbsp;
@@ -148,10 +145,10 @@ const MemeForm = (props) => {
           name="italic"
           id="italic"
           type="checkbox"
-          checked={meme.italic}
+          checked={props.meme.italic}
           onChange={(evt) => {
             console.log(evt.target);
-            meme.set({ ...meme, italic: evt.target.checked });
+            props.onMemeChange({ ...props.meme, italic: evt.target.checked });
           }}
         />
         &nbsp;
@@ -164,8 +161,6 @@ const MemeForm = (props) => {
         <br />
       </form>
     </div>
-    )}
-    </CurrentMemeContext.Consumer>
   );
 };
 

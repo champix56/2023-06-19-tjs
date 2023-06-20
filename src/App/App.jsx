@@ -6,17 +6,20 @@ import MemeForm from "./components/MemeForm/MemeForm";
 import Footer from "./components/ui/Footer/Footer";
 import Header from "./components/ui/Header/Header";
 import { MemeSVGViewer, emptyMeme } from "orsys-tjs-meme";
+
+export const CurrentMemeContext = React.createContext({meme:emptyMeme,updateCurrent:()=>{}});
 const App = () => {
   const [current, setCurrent] = useState(emptyMeme);
   return (
     <div className="App">
+    <CurrentMemeContext.Provider value={{...current,set:setCurrent}}>
       <FlexV3Grow>
         <Header />
         <Navbar />
         <FlexH1Grow>
           <MemeSVGViewer meme={current} image={undefined} basePath="" />
           <MemeForm
-            meme={current}
+           
             onMemeChange={(meme) => {
               setCurrent(meme);
             }}
@@ -24,6 +27,7 @@ const App = () => {
         </FlexH1Grow>
         <Footer />
       </FlexV3Grow>
+      </CurrentMemeContext.Provider>
     </div>
   );
 };
