@@ -1,6 +1,6 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import currentReducer from "./currentSlice";
-import ressourcesReducer from "./ressourcesSlice";
+import ressourcesReducer, { fetchRessources } from "./ressourcesSlice";
 const store = configureStore({
   reducer: combineReducers({
     current: currentReducer,
@@ -9,8 +9,7 @@ const store = configureStore({
   devTools: true,
 });
 export default store;
-
 store.subscribe(() => {
   console.log(store.getState());
 });
-
+store.dispatch(fetchRessources());

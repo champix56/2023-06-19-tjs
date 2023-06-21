@@ -9,7 +9,7 @@ const MemeForm = (props) => {
       <form
         onSubmit={(evt) => {
           evt.preventDefault();
-          // props.onMemeChange(props.meme)
+           props.onMemeSubmit(props.meme)
         }}
       >
         <label htmlFor="titre">
