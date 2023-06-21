@@ -7,6 +7,7 @@ import Footer from "./components/ui/Footer/Footer";
 import Header from "./components/ui/Header/Header";
 import { MemeSVGViewer, emptyMeme } from "orsys-tjs-meme";
 import { REST_ADR } from "./config/config";
+import store from './store/store'
 const App = () => {
   const [current, setCurrent] = useState(emptyMeme);
   const [images, setimages] = useState([]);
