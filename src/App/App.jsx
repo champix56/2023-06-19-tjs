@@ -11,6 +11,7 @@ import MemeFormStored from "./components/MemeForm/MemeFormStored";
 import { Routes, Route} from 'react-router-dom'
 import Home from "./pages/Home/Home";
 import Editor from "./pages/Editor/Editor";
+import Thumbnail from "./pages/Thumbnail/Thumbnail";
 
 const App = () => {
  
@@ -21,7 +22,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home/>}/>
-          <Route path="/thumbnail" element={<Home/>}/>
+          <Route path="/thumbnail" element={<Thumbnail/>}/>
           <Route path="/Editor" element={<Editor/>}/>
         </Routes>
         <Footer />
