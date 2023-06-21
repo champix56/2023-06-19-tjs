@@ -18,6 +18,14 @@ const ressourcesSlice = createSlice({
         state.images=action.payload.images
       }
     );
+    builder.addCase('current/save/fulfiled',(state,action)=>{
+      const position=state.memes.findIndex(m=>m.id===action.payload.id);
+      if(position>=0){
+        state.memes[position]=action.payload
+      }else{
+        state.memes.push(action.payload)
+      }
+    })
   },
 });
 
