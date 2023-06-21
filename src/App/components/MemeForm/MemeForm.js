@@ -191,4 +191,16 @@ const MemeForm = (props) => {
   );
 };
 
+/*export const MemeFormContextConnected = (props) => {
+  return (
+    <RessourcesContext.Consumer>
+    {(ressources)=>
+      <CurrentContext.Consumer>
+        {(current)=><MemeForm images={ressources.images} meme={current.meme} onMemeChange={current.set}/>}
+      </CurrentContext.Consumer>}
+    </RessourcesContext.Consumer>
+  )
+}
+*/
+
 export default MemeForm;
