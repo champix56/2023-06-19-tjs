@@ -1,0 +1,12 @@
+.Thumbnail{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+.Thumbnail>a>div{
+    width: 32vh;
+    height: 25vh;
+}
+.Thumbnail>a>div svg{
+    height: 100%²;
+}
