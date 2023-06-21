@@ -8,6 +8,10 @@ import Header from "./components/ui/Header/Header";
 import { MemeSVGViewer } from "orsys-tjs-meme";
 import MemeSVGViewerStored from "./components/ui/MemeSVGViewerStored/MemeSVGViewerStored";
 import MemeFormStored from "./components/MemeForm/MemeFormStored";
+import { Routes, Route} from 'react-router-dom'
+import Home from "./pages/Home/Home";
+import Editor from "./pages/Editor/Editor";
+
 const App = () => {
  
   return (
@@ -15,10 +19,11 @@ const App = () => {
       <FlexV3Grow>
         <Header />
         <Navbar />
-        <FlexH1Grow>
-          <MemeSVGViewerStored basePath=""/>
-          <MemeFormStored/>
-        </FlexH1Grow>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/thumbnail" element={<Home/>}/>
+          <Route path="/Editor" element={<Editor/>}/>
+        </Routes>
         <Footer />
       </FlexV3Grow>
     </div>
