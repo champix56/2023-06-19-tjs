@@ -23,7 +23,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/thumbnail" element={<Thumbnail/>}/>
-          <Route path="/Editor" element={<Editor/>}/>
+          <Route path="/editor" element={<Editor/>}/>
+          <Route path="/editor/:id" element={<Editor/>}/>
         </Routes>
         <Footer />
       </FlexV3Grow>

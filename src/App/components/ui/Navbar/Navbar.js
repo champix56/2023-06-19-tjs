@@ -5,6 +5,8 @@ import {Navbar as NavBar, Container, Nav} from 'react-bootstrap'
 import '../../../../../node_modules/bootstrap/dist/css/bootstrap.css'
 import '../../../../../node_modules/jquery/dist/jquery.js'
 import '../../../../../node_modules/bootstrap/dist/js/bootstrap.js'
+import { Link } from 'react-router-dom'
+
 //import NavBar from 'react-bootstrap/Navbar'
 /**
  * composant Navbar
@@ -18,9 +20,9 @@ const Navbar = (props) => {
         <Container>
           <NavBar.Brand href="#home">Navbar</NavBar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Link to="/" className="nav-link">Home</Link>
+            <Link to="/thumbnail"  className="nav-link">Thumbnail</Link>
+            <Link to="/editor"  className="nav-link">Editor</Link>
           </Nav>
         </Container>
       </NavBar>
